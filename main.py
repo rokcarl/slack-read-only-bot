@@ -4,8 +4,6 @@ import time
 from slackclient import SlackClient
 
 
-user_map = {}
-channel_map = {}
 settings = bot.get_settings()
 slack_client = SlackClient(settings["slack_bot_token"])
 slack_mega_client = SlackClient(settings["mega_token"])

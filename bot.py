@@ -1,5 +1,8 @@
 import yaml
 
+user_map = {}
+channel_map = {}
+settings = get_settings()
 
 def get_settings():
   return yaml.load(open("settings.yml").read())
