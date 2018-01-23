@@ -1,0 +1,10 @@
+---
+slack_bot_token: xoxb-...
+mega_token: xoxp-...
+delete_msg: Hey, the channel you just posted to is a read-only channel, only the admins can post to it.
+admin_users:
+  - admin1
+  - admin2
+read_only_channels:
+  - channel-1
+  - notifications
