@@ -21,7 +21,7 @@ while True:
   if variables and len(variables) == 3:
     try:
       channel, ts, user_id = variables[0], variables[1], variables[2]
-      box.check_message(channel, ts, user_id)
+      bot.check_message(channel, ts, user_id)
     except TypeError:
       continue
   time.sleep(socket_delay)
