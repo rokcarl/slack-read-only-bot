@@ -4,9 +4,11 @@ Manage your Slack community by making read-only channels. Only admins can post t
 
 # For Slack Admins
 
-1. Create new bot: https://my.slack.com/services/new/bot, username e.g.: `friendly-bot`.
-2. Send over two API tokens to sysadmin. One should start with `xoxb-` and the other with `xoxp-`.
-3. Invite bot to all the read-only channels.
+1. Create a new app: https://api.slack.com/slack-apps.
+2. Go to _Bot Users_ in the navigation and click on the _Add a Bot User_. Enter e.g. `friendly-bot` and save.
+3. Go to _OAuth & Permissions_ in the navigation of the app. Under _Scopes_ select the _Send messages as user_ (`chat:write:user`) permission and click on _Save Changes_.
+4. On the same page click on the _Install App to Workspace_ button and _authorize_ on the next screen.
+5. You are presented with access tokens. Send over two API tokens to the sysadmin. One should start with `xoxb-` and the other with `xoxp-`.
 
 # For Sysadmin
 
