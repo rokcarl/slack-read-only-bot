@@ -16,7 +16,7 @@ Manage your Slack community by making read-only channels. Only admins can post t
 2. Initialize the system
 ```
 sudo apt update
-sudo apt install -y python3-pip
+sudo apt install -y python3-pip monit
 pip3 install slackbot
 sudo chown ubuntu /srv
 cd /srv
@@ -27,8 +27,9 @@ cd slack-read-only-bot
 ```
 cp settings.yml.example settings.yml
 vim settings.yml
+cp monitrc ~/.monitrc
 ```
-4. Run the bot.
+4. Run monit that will run the bot.
 ```
-python3 main.py &
+monit
 ```

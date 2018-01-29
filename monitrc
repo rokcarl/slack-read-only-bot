@@ -1,0 +1,2 @@
+check process bot MATCHING "read-only-bot.py"
+    start program = "/usr/bin/python3 /srv/slack-read-only-bot/read-only-bot.py"
