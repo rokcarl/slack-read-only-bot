@@ -9,6 +9,7 @@ Manage your Slack community by making read-only channels. Only admins can post t
 3. Go to _OAuth & Permissions_ in the navigation of the app. Under _Scopes_ select the _Send messages as user_ (`chat:write:user`) permission and click on _Save Changes_.
 4. On the same page click on the _Install App to Workspace_ button and _authorize_ on the next screen.
 5. You are presented with access tokens. Send over two API tokens to the sysadmin. One should start with `xoxb-` and the other with `xoxp-`.
+6. Invite the bot to all the read-only channels.
 
 # For Sysadmin
 
@@ -22,12 +23,14 @@ sudo chown ubuntu /srv
 cd /srv
 git clone https://gitlab.com/rokcarl/slack-read-only-bot.git
 cd slack-read-only-bot
+pip3 install -r requirements.txt
 ```
 3. Configure settings.
 ```
 cp settings.yml.example settings.yml
 vim settings.yml
 cp monitrc ~/.monitrc
+chmod 0700 ~/.monitrc
 ```
 4. Run monit that will run the bot.
 ```
