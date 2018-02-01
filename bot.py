@@ -1,5 +1,6 @@
 import sys
 import time
+import utils
 from slackclient import SlackClient
 
 
@@ -12,9 +13,9 @@ class Bot(object):
     self.slack_client = SlackClient(self.settings["slack_bot_token"])
     self.slack_mega_client = SlackClient(self.settings["mega_token"])
     if not self.slack_client.rtm_connect():
-      print("Connection failed. Invalid Slack token?")
+      utils.log("Connection failed. Invalid Slack token?")
       sys.exit(1)
-    print("Slack bot connected and running!")
+    utils.log("Slack bot connected and running!")
 
   def get_username(self, user_id):  # gets username by userid
     if user_id in self.user_map:
@@ -31,7 +32,7 @@ class Bot(object):
     return channel_name
 
   def delete_message_and_notify_user(self, channel, ts, username):
-    print("deleting msg")
+    utils.log("deleting msg from {} to channel {}".format(username, self.get_channel_name(channel)))
     username = "@{}".format(username)
     self.slack_mega_client.api_call("chat.delete", channel=channel, ts=ts)
     self.slack_client.api_call("chat.postMessage", channel=username, text=self.settings["delete_msg"])

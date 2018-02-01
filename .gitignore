@@ -1,2 +1,6 @@
 settings.yml
+settings.yml.development
+settings.yml.production
 __pycache__
+log.txt
+nohup.out
