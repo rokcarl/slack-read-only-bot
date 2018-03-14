@@ -21,7 +21,7 @@ sudo apt install -y python3-pip monit
 pip3 install slackbot
 sudo chown ubuntu /srv
 cd /srv
-git clone https://gitlab.com/rokcarl/slack-read-only-bot.git
+git clone https://github.com/rokcarl/slack-read-only-bot.git
 cd slack-read-only-bot
 pip3 install -r requirements.txt
 ```
